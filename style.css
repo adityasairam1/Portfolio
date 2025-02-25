@@ -131,51 +131,6 @@ body, html {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Skills Modal Enhancements */
-#skillsModal h2 {
-    font-size: 2rem;
-    color: #1abc9c;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#skillsModal h3 {
-    font-size: 1.5rem;
-    color: #0077b5;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#skillsModal ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 10px 0 20px 0;
-}
-
-#skillsModal ul li {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
-}
-
-#skillsModal ul li::before {
-    content: '✔';
-    position: absolute;
-    left: 0;
-    color: #1abc9c;
-    font-size: 1rem;
-}
-
-/* Strong Elements */
-#skillsModal li strong {
-    color: #0077b5;
-    font-weight: bold;
-}
-
 /* Modal Styles */
 .modal {
     display: none;
@@ -187,19 +142,28 @@ body, html {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 5% auto;
+    margin: auto;
     padding: 30px;
     border-radius: 10px;
     width: 70%;
+    max-width: 800px;
     position: relative;
     max-height: 80vh;
     overflow-y: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border: 1px solid #ddd;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .close {
@@ -217,52 +181,172 @@ body, html {
     color: #000;
 }
 
-/* Skills Section */
-.skills-section {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* About Me Modal */
+#aboutModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
 }
 
-.skills-section h2 {
-    text-align: center;
+#aboutModal p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.about-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.about-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #0077b5;
+    color: #0077b5;
+}
+
+.about-link:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+/* Projects Modal */
+#projectsModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.project-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    color: #0077b5;
+}
+
+.project-card p, .project-card ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Experience Modal */
+#experienceModal h2 {
     font-size: 2rem;
     color: #1abc9c;
     margin-bottom: 20px;
 }
 
-.skills-category {
+.accordion {
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.accordion:hover {
+    background-color: #ddd;
+}
+
+.panel {
+    padding: 0 15px;
+    display: none;
+    background-color: #fff;
+    overflow: hidden;
+    border-left: 3px solid #1abc9c;
+    margin-bottom: 10px;
+}
+
+.panel ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Resume Modal */
+#resumeModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
     margin-bottom: 20px;
 }
 
-.skills-category h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-    border-left: 5px solid #1abc9c;
-    padding-left: 10px;
-}
-
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.skills-list li {
-    list-style: none;
-    background-color: #fff;
-    padding: 10px 15px;
+#resumeModal object {
+    width: 100%;
+    height: 600px;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.skills-list li:hover {
-    transform: translateY(-3px);
+.resume-download {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.resume-download a {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download a:hover {
+    background-color: #148f77;
+}
+
+/* Contact Modal */
+#contactModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.contact-info li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-socials a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 15px;
+    color: #0077b5;
+    transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+    color: #1abc9c;
 }
 
 /* Responsive Design */
@@ -324,10 +408,5 @@ body, html {
         width: 90%;
         max-height: 80vh;
         overflow-y: auto;
-    }
-
-    /* Skills Section */
-    .skills-list {
-        flex-direction: column;
     }
 }

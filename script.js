@@ -2,14 +2,9 @@
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const href = this.getAttribute('href');
-
-        // If the link is for scrolling to a section
-        if (href.startsWith('#') && href.length > 1) {
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
         }
 
         // Close the hamburger menu after clicking a link (for mobile)
@@ -79,4 +74,18 @@ window.onclick = function(event) {
             modal.style.display = "none";
         }
     }
+}
+
+// Accordion functionality
+const accordions = document.getElementsByClassName("accordion");
+for (let i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
 }

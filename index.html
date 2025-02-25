@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +7,10 @@
     <title>Aditya Sairam Pullabhatla | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Typed.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <!-- Navigation Bar -->
     <header class="navbar">
         <!-- Logo -->
@@ -29,7 +29,6 @@
         <!-- Navigation Links -->
         <nav class="nav-links">
             <ul>
-                <li><a href="#hero">Home</a></li>
                 <li><a href="#" onclick="openModal('aboutModal')">About Me</a></li>
                 <li><a href="#" onclick="openModal('projectsModal')">Projects</a></li>
                 <li><a href="#" onclick="openModal('skillsModal')">Skills</a></li>
@@ -43,69 +42,358 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1>Hi, I'm <span class="typed" data-typed-items="Aditya Sairam Pullabhatla, Software Engineer, Backend Developer, Cloud Specialist"></span></h1>
-            <p>Welcome to my portfolio!</p>
+            <h1>Hi, I'm <span>Aditya Sairam Pullabhatla</span></h1>
+            <p>Software Engineer | Backend Developer | Cloud Specialist</p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Social Icons -->
+    <!-- Footer with Only Copyright -->
     <footer class="footer">
         <p class="copyright-text">&copy; 2025 Aditya Sairam Pullabhatla. All rights reserved.</p>
     </footer>
 
-    <!-- Modals (About, Projects, Skills, etc.) -->
+    <!-- Modals -->
+
+    <!-- About Modal -->
     <div id="aboutModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('aboutModal')">&times;</span>
             <h2>About Me</h2>
-            <p>Passionate about building scalable, AI-driven solutions...</p>
+            <p>
+                Passionate about building scalable, AI-driven solutions, I specialize in designing and developing high-performance applications using Java, Spring Boot, SQL, and No-SQL. With deep expertise in AI, I integrate intelligent systems into modern software architectures to drive efficiency and innovation.
+            </p>
+            <p>
+                I have hands-on experience across major cloud platforms, including Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure, where I architect and deploy robust microservices, API integrations, and AI-powered applications.
+            </p>
+            <p>
+                My focus is cutting-edge software engineering, cloud-native development, and intelligent automation, ensuring businesses leverage the best of AI and cloud technologies for scalable growth. Let's connect and discuss how technology can drive the future! 💡🌍
+            </p>
+
+            <!-- Links Section -->
+            <div class="about-links">
+                <a href="https://www.linkedin.com/in/aditya-sairam-pullabhatla-90561817b/" target="_blank" class="about-link">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- Projects Modal -->
+    <!-- Projects Modal -->
     <div id="projectsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('projectsModal')">&times;</span>
-            <h2>Projects</h2>
-            <p>Details about projects...</p>
+            <h2>🚀 Projects</h2>
+
+            <!-- Project 1: FriendBook Contact List Management System -->
+            <div class="project-card">
+                <h3>📁 FriendBook Contact List Management System</h3>
+                <p><strong>Tech Stack:</strong> SQL Server, T-SQL, Stored Procedures, ER Diagrams, UML Class Diagrams</p>
+
+                <h4>Project Overview:</h4>
+                <p>Developed a Contact List Management Subsystem for FriendBook, a social networking platform that enables users to manage and grow their network. The system allows users to add, view, update, and delete contacts, ensuring data integrity through structured database design and optimized SQL queries.</p>
+
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Designed User and Contact tables with primary and foreign key constraints.</li>
+                    <li>Implemented CRUD operations using stored procedures (Add, Retrieve, Update, Delete contacts).</li>
+                    <li>Developed comprehensive Entity-Relationship (ER) Diagrams and UML Class Diagrams to map system relationships.</li>
+                    <li>Optimized SQL queries for efficient data retrieval and manipulation.</li>
+                    <li>Ensured referential integrity and one-to-many relationships between users and their contacts.</li>
+                </ul>
+
+                <h4>Tools & Technologies:</h4>
+                <p><strong>Database:</strong> SQL Server | <strong>Query Language:</strong> T-SQL | <strong>Modeling:</strong> ER Diagrams, UML Class Diagrams | <strong>Techniques:</strong> Stored Procedures, Primary/Foreign Keys, CRUD Operations</p>
+            </div>
+
+            <!-- Project 2: Medline Search Engine (MSE) -->
+            <div class="project-card">
+                <h3>📁 Medline Search Engine (MSE)</h3>
+                <p><strong>Tech Stack:</strong> Node.js, Express.js, Next.js, MongoDB, MySQL, Puppeteer, NLP, TF-IDF, Cosine Similarity</p>
+
+                <h4>Project Overview:</h4>
+                <p>Designed and developed an AI-driven Medline Search Engine (MSE) to scrape, process, and index 4,481+ medical articles from MedlinePlus. Implemented Natural Language Processing (NLP) techniques and a custom-built search engine that leverages TF-IDF and Cosine Similarity to provide contextually relevant search results.</p>
+
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Built a web scraper using Puppeteer to collect and process over 4,400+ medical articles.</li>
+                    <li>Applied NLP (tokenization, stemming, lemmatization) for data preprocessing and indexing.</li>
+                    <li>Developed an inverted index for efficient search queries across large datasets.</li>
+                    <li>Implemented TF-IDF and Cosine Similarity algorithms for ranking search results.</li>
+                    <li>Designed a user-friendly interface with Next.js for real-time query inputs and result displays.</li>
+                </ul>
+
+                <h4>Tools & Technologies:</h4>
+                <p><strong>Backend:</strong> Node.js, Express.js | <strong>Frontend:</strong> Next.js | <strong>Databases:</strong> MongoDB, MySQL | <strong>Web Scraping:</strong> Puppeteer | <strong>NLP & AI:</strong> TF-IDF, Cosine Similarity | <strong>Search Engine Design:</strong> Inverted Index</p>
+            </div>
+
+            <!-- Project 3: Linux Shell & Distributed Computing Platform -->
+            <div class="project-card">
+                <h3>📁 Linux Shell & Distributed Computing Platform</h3>
+                <p><strong>Tech Stack:</strong> C, Sun RPC, POSIX Threads, Linux, NFS, Multithreading, Shell Scripting</p>
+
+                <h4>Project Overview:</h4>
+                <p>Engineered a Linux Shell and an RPC-based Distributed Computing Platform that supports command execution, process management, and distributed task handling. The system enables users to execute commands locally while distributing computationally intensive jobs across multiple servers using Remote Procedure Calls (RPC).</p>
+
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Built a custom Linux shell supporting standard commands (cd, pwd, ls, etc.) and command chaining.</li>
+                    <li>Developed a multi-threaded messageprint program using POSIX Threads to demonstrate thread synchronization.</li>
+                    <li>Implemented an RPC-based client-server system to distribute large jobs to multiple servers.</li>
+                    <li>Enabled real-time load balancing by monitoring server CPU loads and rescheduling jobs as needed.</li>
+                    <li>Integrated fault-tolerance mechanisms to handle server crashes and job rescheduling.</li>
+                </ul>
+
+                <h4>Tools & Technologies:</h4>
+                <p><strong>Programming Language:</strong> C | <strong>Distributed Computing:</strong> Sun RPC | <strong>Multithreading:</strong> POSIX Threads | <strong>System Programming:</strong> Shell Scripting | <strong>Networking:</strong> NFS, RPC Communication</p>
+            </div>
         </div>
     </div>
 
+    <!-- Skills Modal -->
+    <!-- Skills Modal -->
     <div id="skillsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('skillsModal')">&times;</span>
-            <h2>Skills</h2>
-            <p>Details about skills...</p>
+            <h2>💡 Skills</h2>
+
+            <!-- Front-End Development -->
+            <h3>🖥 Front-End Development</h3>
+            <ul>
+                <li><strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript</li>
+                <li><strong>Frameworks & Libraries:</strong> React.js, Angular, Vue.js</li>
+                <li><strong>State Management:</strong> Redux, Context API, MobX</li>
+                <li><strong>Styling & UI Libraries:</strong> Tailwind CSS, Bootstrap, Material-UI (MUI), SASS/SCSS</li>
+                <li><strong>Build Tools:</strong> Webpack, Vite, Babel</li>
+                <li><strong>Testing:</strong> Jest, React Testing Library, Cypress</li>
+            </ul>
+
+            <!-- Back-End Development -->
+            <h3>🛠 Back-End Development</h3>
+            <ul>
+                <li><strong>Languages:</strong> Node.js, Java, Python, PHP</li>
+                <li><strong>Frameworks:</strong> Express.js (Node.js), Spring Boot (Java), Django/Flask (Python)</li>
+                <li><strong>API Development:</strong> RESTful APIs, GraphQL</li>
+                <li><strong>Authentication & Authorization:</strong> JWT, OAuth 2.0, Passport.js, Firebase Auth</li>
+                <li><strong>Testing:</strong> Mocha, Chai, JUnit</li>
+            </ul>
+
+            <!-- Database Management -->
+            <h3>🗄 Database Management</h3>
+            <ul>
+                <li><strong>Relational Databases:</strong> MySQL, PostgreSQL, SQL Server</li>
+                <li><strong>NoSQL Databases:</strong> MongoDB, Firebase Firestore, Redis</li>
+                <li><strong>ORM/ODM:</strong> Sequelize (Node.js), Mongoose (MongoDB), Hibernate (Java)</li>
+                <li><strong>Database Design:</strong> Normalization, Indexing, Query Optimization</li>
+            </ul>
+
+            <!-- DevOps & Deployment -->
+            <h3>☁️ DevOps & Deployment</h3>
+            <ul>
+                <li><strong>Version Control:</strong> Git, GitHub, GitLab, Bitbucket</li>
+                <li><strong>CI/CD:</strong> Jenkins, GitHub Actions, GitLab CI/CD</li>
+                <li><strong>Containers & Orchestration:</strong> Docker, Kubernetes</li>
+                <li><strong>Web Servers:</strong> Nginx, Apache</li>
+                <li><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda, RDS), Azure, Google Cloud Platform (GCP)</li>
+                <li><strong>Deployment Tools:</strong> Heroku, Netlify, Vercel</li>
+            </ul>
+
+            <!-- Security Best Practices -->
+            <h3>🔒 Security Best Practices</h3>
+            <ul>
+                <li>OWASP Top 10</li>
+                <li>HTTPS, CORS, CSRF Protection</li>
+                <li>Data Encryption (SSL/TLS, bcrypt for passwords)</li>
+                <li>Input Validation & Sanitization</li>
+            </ul>
+
+            <!-- Tools & Others -->
+            <h3>📊 Tools & Others</h3>
+            <ul>
+                <li><strong>Package Managers:</strong> npm, yarn</li>
+                <li><strong>API Testing:</strong> Postman, Swagger</li>
+                <li><strong>Agile Methodologies:</strong> Scrum, Kanban</li>
+                <li><strong>Project Management:</strong> Jira, Trello, Asana</li>
+                <li><strong>Documentation:</strong> Markdown, JSDoc, Swagger</li>
+            </ul>
+
+            <!-- Soft Skills -->
+            <h3>💡 Soft Skills</h3>
+            <ul>
+                <li>Problem-solving and Critical Thinking</li>
+                <li>Strong Communication & Collaboration</li>
+                <li>Time Management & Prioritization</li>
+                <li>Adaptability & Continuous Learning</li>
+                <li>Code Reviews & Mentorship</li>
+            </ul>
+
+            <!-- Optional Add-ons -->
+            <h3>💼 Optional Add-ons</h3>
+            <ul>
+                <li><strong>Mobile Development:</strong> React Native, Flutter</li>
+                <li><strong>Serverless Architecture:</strong> AWS Lambda, Firebase Functions</li>
+                <li><strong>Microservices:</strong> Using Docker + Kubernetes</li>
+                <li><strong>AI/ML Integration:</strong> TensorFlow.js, OpenAI API</li>
+                <li><strong>Web3/Blockchain:</strong> Solidity, Ethereum, Web3.js</li>
+            </ul>
         </div>
     </div>
 
+    <!-- Experience Modal with Collapsible Sections -->
     <div id="experienceModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('experienceModal')">&times;</span>
-            <h2>Experience</h2>
-            <p>Details about experience...</p>
+            <h2>💼 Experience</h2>
+
+            <!-- Cleveland State University -->
+            <button class="accordion">
+                <span>Software Engineer | Graduate Assistant | Cleveland State University, OH | August 2023 – December 2024</span>
+                <i class="arrow-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="panel">
+                <ul>
+                    <li>Mentored graduate and undergraduate students in Full-Stack Web Development, focusing on front-end frameworks, back-end development, API integration, and database management.</li>
+                    <li>Designed and implemented hands-on labs on web application development using Java, JavaScript (React.js/Node.js), and Python (Django/Flask), covering end-to-end application architecture.</li>
+                    <li>Built and optimized full-stack applications with modern frameworks like React.js, Express.js, and Spring Boot, ensuring scalability and responsiveness.</li>
+                    <li>Led workshops on CI/CD pipelines using Jenkins, GitHub Actions, Docker, and Kubernetes for seamless deployment of web applications to AWS and GCP.</li>
+                    <li>Guided students in building and deploying RESTful APIs and GraphQL services, focusing on authentication (JWT, OAuth 2.0), authorization, and secure data handling.</li>
+                    <li>Integrated real-time functionalities using WebSockets and Kafka for live updates and event-driven architectures in web applications.</li>
+                    <li>Conducted sessions on SQL and NoSQL databases (PostgreSQL, MySQL, MongoDB, DynamoDB), covering schema design, query optimization, and data modeling for scalable apps.</li>
+                    <li>Taught best practices in responsive design (using Tailwind CSS, Bootstrap) and state management (Redux, Context API) to build intuitive and dynamic user interfaces.</li>
+                    <li>Provided instruction on performance optimization techniques for both front-end and back-end, including lazy loading, code splitting, and database indexing.</li>
+                    <li>Mentored students on implementing monitoring and logging (Prometheus, Grafana, ELK stack) for web applications to ensure high availability and fault tolerance.</li>
+                    <li>Contributed to collaborative projects integrating AI/ML models into full-stack applications using TensorFlow.js and PyTorch, enabling intelligent features and predictive analytics.</li>
+                </ul>
+            </div>
+
+            <!-- Amazon -->
+            <button class="accordion">
+                <span>Full-Stack Engineer | Amazon | Chennai, India | June 2021 – December 2022</span>
+                <i class="arrow-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="panel">
+                <ul>
+                    <li>Developed and optimized full-stack web applications to manage and enhance large-scale structured product data, improving data accuracy, consistency, and discoverability.</li>
+                    <li>Built interactive dashboards using React.js and D3.js for real-time monitoring of data pipelines, enabling teams to visualize product catalog performance and data quality metrics.</li>
+                    <li>Designed and implemented RESTful APIs using Python (Flask/Django) and Node.js (Express) for efficient data retrieval, updates, and integration with internal tools.</li>
+                    <li>Automated data ingestion and catalog updates by developing Python scripts, integrating them into scalable ETL pipelines and improving system efficiency.</li>
+                    <li>Conducted data quality audits and validation using SQL and Python, integrating results into front-end tools to provide real-time feedback on data integrity.</li>
+                    <li>Optimized database performance for large-scale product data using PostgreSQL and MongoDB, ensuring quick response times for both internal and external data requests.</li>
+                    <li>Implemented CI/CD pipelines with Jenkins and GitHub Actions to automate deployment processes, improving release cycles and ensuring high availability.</li>
+                    <li>Enhanced product search and recommendation features by collaborating with data scientists to integrate AI/ML models into the platform using TensorFlow and scikit-learn.</li>
+                    <li>Strengthened data governance and security by implementing authentication (OAuth 2.0, JWT) and role-based access controls within web applications.</li>
+                    <li>Improved cross-functional collaboration by developing internal tools that facilitated communication between sellers, account managers, and engineering teams.</li>
+                    <li>Utilized Agile methodologies, participating in daily stand-ups, sprint planning, and retrospectives to ensure continuous delivery of high-quality features.</li>
+                </ul>
+            </div>
+
+            <!-- Cigna Health Care -->
+            <button class="accordion">
+                <span>Full-Stack Engineer | Cigna Health Care | May 2018 – May 2021</span>
+                <i class="arrow-icon fas fa-chevron-down"></i>
+            </button>
+            <div class="panel">
+                <ul>
+                    <li>Designed and developed scalable full-stack applications for healthcare portals and claims processing, ensuring high availability, fault tolerance, and optimized data workflows.</li>
+                    <li>Built interactive front-end interfaces using React.js and Angular, focusing on user experience, accessibility (WCAG compliance), and responsive design.</li>
+                    <li>Developed and maintained RESTful APIs and GraphQL services using ASP.NET Core (C#), enabling secure and efficient data exchange across systems.</li>
+                    <li>Engineered real-time features like appointment tracking and claims status updates using WebSockets and SignalR, improving user engagement and experience.</li>
+                    <li>Optimized SQL Server and Azure SQL databases with indexing, query tuning, and stored procedures, improving system performance and reducing query latency by 25%.</li>
+                    <li>Integrated NoSQL databases like MongoDB for managing unstructured healthcare data, enabling flexible and scalable real-time analytics.</li>
+                    <li>Implemented data visualization features with SSRS and custom dashboards using D3.js and Chart.js to provide dynamic insights into healthcare data.</li>
+                    <li>Deployed cloud-based applications on Microsoft Azure, leveraging services like Azure Functions, Azure Machine Learning, and Blob Storage for scalable data processing and predictive analytics.</li>
+                    <li>Ensured application security and compliance with healthcare regulations (HIPAA) by implementing RBAC, SSL/TLS encryption, OAuth 2.0, and audit mechanisms.</li>
+                    <li>Established CI/CD pipelines using Azure DevOps and Jenkins for automated testing, builds, and deployments, reducing release cycles and improving reliability.</li>
+                    <li>Monitored application health and performance using Azure Monitor and Application Insights, enabling proactive issue resolution and system scalability.</li>
+                    <li>Collaborated with cross-functional teams in an Agile environment to deliver high-quality, data-driven healthcare solutions, focusing on user needs and industry standards.</li>
+                    <li>Integrated AI/ML models using TensorFlow and PyTorch into web applications for predictive analytics, enhancing patient care recommendations and risk assessments.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <!-- Resume Modal -->
+    <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('resumeModal')">&times;</span>
             <h2>Resume</h2>
+
+            <!-- Embed Resume using object tag -->
             <object data="Resume.pdf" type="application/pdf" width="100%" height="600px">
-                <p>Your browser does not support PDFs. <a href="Resume.pdf" download>Download the PDF</a>.</p>
+                <p>Your browser does not support PDFs.
+                    <a href="Resume.pdf" download>Download the PDF</a>.
+                </p>
             </object>
+
+            <div class="resume-download">
+                <a href="Resume.pdf" download class="about-link">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('contactModal')">&times;</span>
-            <h2>Contact</h2>
-            <p>Email: adityapsairam@gmail.com</p>
-            <p>Phone: +1 216-413-2548</p>
+            <h2>📞 Contact Information</h2>
+
+            <ul class="contact-info">
+                <li><strong>Name:</strong> Aditya Sairam Pullabhatla</li>
+                <li><strong>Phone:</strong> <a href="tel:+12164132548">+1 216-413-2548</a></li>
+                <li><strong>Email:</strong> <a href="mailto:adityapsairam@gmail.com">adityapsairam@gmail.com</a></li>
+            </ul>
+
+            <div class="contact-socials">
+                <a href="https://www.linkedin.com/in/aditya-sairam-pullabhatla-90561817b/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/your-github-username" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Main JavaScript -->
-    <script src="script.js"></script>
+    <!-- JavaScript for Modal and Accordion Functionality -->
+    <script>
+        // Function to open modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Function to close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName("modal");
+            for (let modal of modals) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        // Accordion functionality
+        const accordions = document.getElementsByClassName("accordion");
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>

@@ -360,23 +360,30 @@
     <script>
         // Function to open modal
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "flex"; // Changed to flex
+            }
         }
-
+    
         // Function to close modal
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "none";
+            }
         }
-
+    
         // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modals = document.getElementsByClassName("modal");
-            for (let modal of modals) {
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll(".modal");
+            modals.forEach(modal => {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
-            }
-        }
+            });
+        });
+    
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -387,13 +394,13 @@
                 }
             });
         });
-
+    
         // Hamburger Menu for Mobile
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
-
+    
         // Close hamburger menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -403,18 +410,7 @@
                 }
             });
         });
-
-        // Close modal when clicking outside the modal-content
-        window.addEventListener('click', function (event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-        
-
+    
         // Accordion functionality
         const accordions = document.getElementsByClassName("accordion");
         for (let i = 0; i < accordions.length; i++) {
@@ -429,6 +425,5 @@
             });
         }
     </script>
-
 </body>
 </html>

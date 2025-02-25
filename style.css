@@ -1,4 +1,4 @@
-/* Reset and Global Styles */
+/* General Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -66,7 +66,7 @@ body, html {
     color: #1abc9c;
 }
 
-/* Hamburger Menu for Mobile */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -114,24 +114,15 @@ body, html {
 
 /* Footer */
 .footer {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
-    z-index: 100;
-}
-
-.footer p {
-    font-size: 1rem;
-    color: #000;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
     font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Modal Styles */
+/* Modal General Styles */
 .modal {
     display: none;
     position: fixed;
@@ -140,8 +131,9 @@ body, html {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -150,14 +142,13 @@ body, html {
     background-color: #fff;
     margin: auto;
     padding: 30px;
-    border-radius: 10px;
-    width: 70%;
-    max-width: 800px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 900px;
     position: relative;
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease;
 }
 
@@ -169,16 +160,16 @@ body, html {
 .close {
     color: #aaa;
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 20px;
     font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
+.close:hover {
+    color: #333;
 }
 
 /* About Me Modal */
@@ -186,18 +177,20 @@ body, html {
     font-size: 2rem;
     color: #1abc9c;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 #aboutModal p {
     font-size: 1.1rem;
     line-height: 1.8;
-    margin-bottom: 12px;
-    color: #333;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
 }
 
 .about-links {
     display: flex;
-    gap: 15px;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -207,7 +200,7 @@ body, html {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: 2px solid #0077b5;
@@ -223,30 +216,45 @@ body, html {
 #projectsModal h2 {
     font-size: 2rem;
     color: #1abc9c;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .project-card {
     background: #f9f9f9;
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .project-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #0077b5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .project-card p, .project-card ul {
     font-size: 1.1rem;
     line-height: 1.6;
+    color: #555;
+}
+
+.project-card ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.project-card ul li {
+    margin-bottom: 8px;
 }
 
 /* Experience Modal */
@@ -254,6 +262,7 @@ body, html {
     font-size: 2rem;
     color: #1abc9c;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .accordion {
@@ -290,11 +299,51 @@ body, html {
     line-height: 1.6;
 }
 
+/* Skills Modal */
+#skillsModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#skillsModal h3 {
+    font-size: 1.5rem;
+    color: #0077b5;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#skillsModal ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 20px 0;
+}
+
+#skillsModal ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#skillsModal ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #1abc9c;
+    font-size: 1rem;
+}
+
 /* Resume Modal */
 #resumeModal h2 {
     font-size: 2rem;
     color: #1abc9c;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #resumeModal object {
@@ -327,6 +376,7 @@ body, html {
     font-size: 2rem;
     color: #1abc9c;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .contact-info li {
@@ -352,61 +402,29 @@ body, html {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    /* Navbar */
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        width: 100%;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .nav-links ul {
-        flex-direction: column;
-        gap: 10px;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 10px;
-        border-radius: 8px;
-        width: 100%;
-    }
-
-    .nav-links ul li a {
-        font-size: 1.1rem;
-        color: #333;
-    }
-
-    /* Hero Section */
-    #hero {
-        height: auto;
-        padding: 60px 20px;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    /* Modal */
     .modal-content {
-        width: 90%;
-        max-height: 80vh;
-        overflow-y: auto;
+        width: 95%;
+        padding: 20px;
+    }
+
+    #aboutModal h2, #projectsModal h2, #skillsModal h2, #experienceModal h2, #contactModal h2, #resumeModal h2 {
+        font-size: 1.6rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .about-link {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .accordion {
+        font-size: 1rem;
+    }
+
+    #resumeModal object {
+        height: 400px;
     }
 }

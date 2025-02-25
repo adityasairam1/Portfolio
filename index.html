@@ -310,13 +310,16 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('resumeModal')">&times;</span>
             <h2>Resume</h2>
-    
-            <!-- Embed Resume using relative path -->
-            <iframe src="Resume.pdf" width="100%" height="600px"></iframe>
-    
+
+            <!-- Embed Resume using object tag with absolute URL -->
+            <object data="https://adityasairam1.github.io/portfolio/Resume.pdf" type="application/pdf" width="100%" height="600px">
+                <p>Your browser does not support PDFs.
+                    <a href="https://adityasairam1.github.io/portfolio/Resume.pdf" download>Download the PDF</a>.
+                </p>
+            </object>
+
             <div class="resume-download">
-                <!-- Download link using relative path -->
-                <a href="Resume.pdf" download class="about-link">
+                <a href="https://adityasairam1.github.io/portfolio/Resume.pdf" download class="about-link">
                     <i class="fas fa-download"></i> Download Resume
                 </a>
             </div>

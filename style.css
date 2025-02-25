@@ -67,19 +67,41 @@ body, html {
 }
 
 /* Hamburger Menu */
+
+/* Hamburger Menu */
 .hamburger {
-    display: none;
+    display: none; /* Hide by default */
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    border-radius: 5px;
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none; /* Hide the regular nav links */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 70px; /* Adjust based on your navbar height */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0; /* Add some space between links */
+    }
 }
+
 
 /* Hero Section */
 #hero {

@@ -1,3 +1,4 @@
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -9,44 +10,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Typed.js for dynamic typing effect
-const typedElement = document.querySelector('.typed');
-if (typedElement) {
-    const typedStrings = typedElement.getAttribute('data-typed-items').split(',');
-    new Typed('.typed', {
-        strings: typedStrings,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000,
-        loop: true
-    });
-}
-
-// Highlight active section in the navigation bar
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 50;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ==========================
-// Modal Functionality Starts
-// ==========================
+// Modal Functionality
 
 // Function to open modal
 function openModal(modalId) {
@@ -79,15 +43,13 @@ window.addEventListener('click', function (event) {
     });
 });
 
-// ==========================
 // Hamburger Menu for Mobile
-// ==========================
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
 
-// Close hamburger menu when a link is clicked (for better UX)
+// Close hamburger menu when a link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         const navLinks = document.querySelector('.nav-links');

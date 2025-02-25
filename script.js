@@ -2,9 +2,20 @@
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+        const href = this.getAttribute('href');
+
+        // If the link is for scrolling to a section
+        if (href.startsWith('#') && href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Close the hamburger menu after clicking a link (for mobile)
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
         }
     });
 });
@@ -43,3 +54,29 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Function to toggle the hamburger menu
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Function to open modal
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+}
+
+// Function to close modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName("modal");
+    for (let modal of modals) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}

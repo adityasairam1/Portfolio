@@ -200,6 +200,66 @@ body, html {
     margin-bottom: 8px;
 }
 
+/* About Section */
+.about-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.about-link {
+    text-decoration: none;
+    color: #0077b5;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.about-link:hover {
+    color: #0056a3;
+}
+
+/* Contact Section */
+.contact-info {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #0077b5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056a3;
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #1abc9c;
+}
+
 /* Experience Section */
 .experience-item {
     margin-bottom: 20px;

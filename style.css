@@ -9,6 +9,8 @@ body, html {
     font-family: Arial, sans-serif;
     height: 100%;
     scroll-behavior: smooth;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 /* Navigation Bar */
@@ -16,11 +18,12 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background-color: white;
     padding: 15px 30px;
     position: fixed;
     top: 0;
     width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
@@ -61,6 +64,21 @@ body, html {
 
 .nav-links ul li a:hover {
     color: #1abc9c;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -113,6 +131,92 @@ body, html {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
+/* Skills Modal Enhancements */
+#skillsModal h2 {
+    font-size: 2rem;
+    color: #1abc9c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#skillsModal h3 {
+    font-size: 1.5rem;
+    color: #0077b5;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#skillsModal ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0 20px 0;
+}
+
+#skillsModal ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#skillsModal ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #1abc9c;
+    font-size: 1rem;
+}
+
+/* Strong Elements */
+#skillsModal li strong {
+    color: #0077b5;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 70%;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
 /* Skills Section */
 .skills-section {
     max-width: 900px;
@@ -161,47 +265,6 @@ body, html {
     transform: translateY(-3px);
 }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 70%;
-    position: relative;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
-}
-
-.close {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
 
@@ -210,6 +273,21 @@ body, html {
         flex-direction: column;
         align-items: flex-start;
         padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .nav-links ul {
@@ -252,4 +330,4 @@ body, html {
     .skills-list {
         flex-direction: column;
     }
-} 
+}

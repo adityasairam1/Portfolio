@@ -24,7 +24,7 @@ A modern, responsive portfolio website built with React, Tailwind CSS, and Frame
 - **Animations**: Framer Motion
 - **Icons**: React Icons
 - **Notifications**: React Hot Toast
-- **Email**: EmailJS (optional)
+- **Email**: Contact form with toast notifications
 - **PostCSS**: Autoprefixer for cross-browser compatibility
 - **Fonts**: Inter, Space Grotesk, JetBrains Mono
 
@@ -56,6 +56,8 @@ portfolio/
 │   └── index.css
 ├── tailwind.config.js
 ├── postcss.config.js
+├── vite.config.js
+├── eslint.config.js
 └── package.json
 ```
 
@@ -214,6 +216,7 @@ Aditya Sairam Pullabhatla
 
 ## 🆕 Recent Updates
 
+- ✅ **Code Cleanup**: Removed unused files, dependencies, and duplicate assets
 - ✅ **Profile Image Integration**: Personal photos now display across all sections with beautiful gradient borders
 - ✅ **Resume Download**: Fixed resume download functionality with proper filename handling
 - ✅ **Social Media Links**: All LinkedIn, GitHub, Email, and Phone links are working correctly
@@ -221,6 +224,7 @@ Aditya Sairam Pullabhatla
 - ✅ **Enhanced CSS**: Advanced glass morphism effects, gradients, and responsive utilities
 - ✅ **Case Sensitivity**: Fixed file path issues for profile image and resume
 - ✅ **Error Handling**: Graceful fallbacks for profile images and resume downloads
+- ✅ **Dependency Optimization**: Removed unused EmailJS dependency and large base64 files
 
 ---
 

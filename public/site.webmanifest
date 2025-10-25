@@ -2,7 +2,7 @@
   "name": "Aditya Sairam Pullabhatla - Portfolio",
   "short_name": "ASP Portfolio",
   "description": "Full-Stack Developer & AI/ML Engineer Portfolio",
-  "start_url": "/Portfolio/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#3b82f6",

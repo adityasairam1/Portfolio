@@ -91,7 +91,7 @@ npm run dev
 ```bash
 npm run build
 ```
-
+cl
 The built files will be in the `dist` directory.
 
 ## 🎨 Customization

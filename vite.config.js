@@ -5,8 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/Portfolio/', // GitHub Pages deployment
+  publicDir: 'public',
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
+    copyPublicDir: true,
     sourcemap: false,
     minify: 'terser',
     rollupOptions: {

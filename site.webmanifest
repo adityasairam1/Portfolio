@@ -1,16 +1,17 @@
 {
-  "name": "Aditya Sairam Pullabhatla - Software Engineer Portfolio",
-  "short_name": "Aditya Portfolio",
-  "description": "Software Engineer with 4+ years developing performance-critical applications in C/C++, specializing in distributed systems, cloud architecture, and robotics automation.",
+  "name": "Aditya Sairam Pullabhatla - Portfolio",
+  "short_name": "ASP Portfolio",
+  "description": "Full-Stack Developer & AI/ML Engineer Portfolio",
   "start_url": "/Portfolio/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0ea5e9",
+  "background_color": "#0a0a0a",
+  "theme_color": "#3b82f6",
   "icons": [
     {
-      "src": "/Portfolio/vite.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "/Portfolio/Profile.JPG",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ]
 }

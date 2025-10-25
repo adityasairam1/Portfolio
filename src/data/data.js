@@ -7,8 +7,8 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/adityasairam/",
   github: "https://github.com/adityasairam1",
   summary: "Aditya Sairam Pullabhatla, Software Engineer",
-  resumeUrl: "/Resume.pdf",
-  profileImage: "/Profile.JPG"
+  resumeUrl: "/Portfolio/Resume.pdf",
+  profileImage: "/Portfolio/Profile.JPG"
 };
 
 export const experience = [

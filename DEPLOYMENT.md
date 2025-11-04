@@ -4,25 +4,7 @@ This guide covers various deployment options for the portfolio website.
 
 ## 🚀 Quick Deploy Options
 
-### 1. Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Vercel will automatically detect it's a Vite project
-4. Deploy with zero configuration
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-
-# For production
-vercel --prod
-```
-
-### 2. Netlify
+### 1. Netlify
 
 1. Build the project:
 ```bash
@@ -32,7 +14,7 @@ npm run build
 2. Drag and drop the `dist` folder to Netlify
 3. Or connect your GitHub repository for automatic deployments
 
-### 3. GitHub Pages
+### 2. GitHub Pages
 
 1. Install gh-pages:
 ```bash
@@ -54,7 +36,7 @@ npm run build
 npm run deploy
 ```
 
-### 4. AWS S3 + CloudFront
+### 3. AWS S3 + CloudFront
 
 1. Build the project:
 ```bash
@@ -88,11 +70,6 @@ VITE_APP_URL=https://adityasairam.dev
 - [ ] Validate contact form functionality
 
 ## 🌐 Custom Domain Setup
-
-### For Vercel:
-1. Go to your project settings
-2. Add your domain in the "Domains" section
-3. Update DNS records as instructed
 
 ### For Netlify:
 1. Go to Site settings

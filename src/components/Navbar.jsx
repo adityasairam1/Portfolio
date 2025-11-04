@@ -27,7 +27,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = personalInfo.resumeUrl;
-    link.download = `${personalInfo.name.replace(/\s+/g, '_')}_Resume.pdf`;
+    link.download = `${personalInfo.name.replace(/\s+/g, '_')}_Resume.docx`;
     link.click();
   };
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronDown, FaChevronUp, FaMapMarkerAlt, FaCalendarAlt, FaCode, FaUsers } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaMapMarkerAlt, FaCalendarAlt, FaCode } from 'react-icons/fa';
 import { experience } from '../data/data';
 
 const Experience = ({ darkMode }) => {

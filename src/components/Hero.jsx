@@ -31,15 +31,10 @@ const Hero = ({ darkMode }) => {
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const copyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
-    // Toast notification would be handled by parent component
-  };
-
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = personalInfo.resumeUrl;
-    link.download = 'Aditya_Sairam_Pullabhatla_Resume.pdf';
+    link.download = 'Aditya_Sairam_Resume.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

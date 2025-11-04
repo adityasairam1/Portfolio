@@ -6,11 +6,12 @@ import { skills } from '../data/data';
 const Skills = ({ darkMode }) => {
   const skillIcons = {
     "Programming Languages": FaCode,
-    "Systems Programming": FaServer,
-    "Web Technologies": FaLaptopCode,
-    "Cloud & DevOps": FaCloud,
+    "Big Data & Processing": FaServer,
     "Databases": FaDatabase,
-    "Tools & Frameworks": FaTools
+    "Cloud & AI Platforms": FaCloud,
+    "Web Technologies": FaLaptopCode,
+    "DevOps & Containers": FaServer,
+    "Tools & Platforms": FaTools
   };
 
   const containerVariants = {
@@ -93,7 +94,7 @@ const Skills = ({ darkMode }) => {
                   transition={{ duration: 0.6 }}
                   className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center"
                 >
-                  {React.createElement(skillIcons[category], { 
+                  {React.createElement(skillIcons[category] || FaCode, { 
                     className: "text-white text-xl" 
                   })}
                 </motion.div>

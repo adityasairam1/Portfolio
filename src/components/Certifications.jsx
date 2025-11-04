@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCertificate, FaExternalLinkAlt, FaCalendarAlt, FaAward } from 'react-icons/fa';
+import { FaCertificate, FaExternalLinkAlt, FaCalendarAlt } from 'react-icons/fa';
 import { certifications } from '../data/data';
 
 const Certifications = ({ darkMode }) => {

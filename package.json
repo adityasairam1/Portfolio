@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Professional portfolio website for Aditya Sairam Pullabhatla - Software Engineer",
-  "author": "Aditya Sairam Pullabhatla <adityapsairam@gmail.com>",
+  "description": "Professional portfolio website for Aditya Sairam - Software Engineer",
+  "author": "Aditya Sairam <adityasairamp@outlook.com>",
   "homepage": "https://adityasairam.dev",
   "scripts": {
     "dev": "vite",

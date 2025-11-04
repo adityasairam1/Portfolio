@@ -1,4 +1,4 @@
-# Aditya Sairam Pullabhatla - Portfolio Website
+# Aditya Sairam - Portfolio Website
 
 A modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. This website showcases my professional experience, skills, projects, and achievements as a Full-Stack Developer and AI/ML Engineer.
 
@@ -124,9 +124,9 @@ All personal information is stored in `src/data/data.js`. Update the following o
 
 ### Resume Setup
 
-1. Add your resume PDF to `public/Resume.pdf` (case-sensitive filename)
+1. Add your resume PDF to `public/Resume.docx` (case-sensitive filename)
 2. The download button will automatically work with the correct filename
-3. Resume downloads as "Aditya_Sairam_Pullabhatla_Resume.pdf"
+3. Resume downloads as "Aditya_Sairam_Resume.docx"
 
 ### Styling
 
@@ -207,9 +207,9 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📞 Contact
 
-Aditya Sairam Pullabhatla
-- Email: adityapsairam@gmail.com
-- Phone: +1 (216) 413-2548
+Aditya Sairam
+- Email: aditysairamp@outlook.com
+- Phone: +1 (248) 600-0106
 - LinkedIn: [adityasairam](https://www.linkedin.com/in/adityasairam/)
 - GitHub: [adityasairam1](https://github.com/adityasairam1)
 - Location: Detroit Metropolitan Area
@@ -228,4 +228,4 @@ Aditya Sairam Pullabhatla
 
 ---
 
-Made with ❤️ and lots of ☕ by Aditya Sairam Pullabhatla
+Made with ❤️ and lots of ☕ by Aditya Sairam

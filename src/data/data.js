@@ -16,18 +16,23 @@ export const experience = [
     id: 1,
     company: "Robotics Technologies LLC",
     position: "Software Engineer",
-    location: "Duncanville, TX",
+    location: "Duncanville, Texas",
     startDate: "Mar 2025",
     endDate: "Present",
     type: "Full-time",
     achievements: [
-      "Architected distributed job scheduling system reducing processing time by 40%",
-      "Developed real-time monitoring dashboard using React and WebSocket connections",
-      "Implemented automated testing pipeline reducing deployment time by 60%",
-      "Led migration of legacy C++ systems to modern cloud-based architecture",
-      "Mentored junior developers and established coding standards"
+      "Led the planning, design, implementation, testing, and deployment of AI applications using Agile methodology across iterative sprints",
+      "Driving end-to-end delivery of scalable projects and features impacting 100K+ consumers across diverse platforms",
+      "Designed and developed microservices that integrate with Azure AI and Vertex AI via RESTful APIs, leveraging cutting-edge models including GPT-4o, GPT-5, Gemini 1.5, Gemini 2, and Mistral",
+      "Designed and developed microservices including a Content Management Tool leveraging Kafka for real-time data streaming and RESTful API communication",
+      "Integrated Azure Embeddings to perform semantic vector search and seed documents into Azure Indexes for efficient retrieval",
+      "Implemented document chunking and preprocessing pipelines using Llama-based models to enhance AI comprehension and response accuracy",
+      "Built end-to-end workflows that feed processed content into Large Language models and deliver dynamic responses to chatbot interfaces",
+      "Designed and implemented data pipelines that stored unstructured content in Cosmos DB containers, enabling scalable and flexible storage",
+      "Developed logic to persist and transform Cosmos DB data into SQL Server for relational querying and analytics",
+      "Built end-to-end workflows that retrieve and format data from SQL and Cosmos DB, delivering real-time responses to frontend applications"
     ],
-    technologies: ["C++", "React", "Node.js", "AWS", "Docker", "PostgreSQL"]
+    technologies: ["Azure AI", "Vertex AI", "GPT-4o", "GPT-5", "Gemini 1.5", "Gemini 2", "Mistral", "Kafka", "Cosmos DB", "SQL Server", "RESTful APIs", "Llama", "Agile"]
   },
   {
     id: 2,
@@ -49,52 +54,52 @@ export const experience = [
   {
     id: 3,
     company: "Cleveland State University",
-    position: "Graduate Research Assistant",
-    location: "Cleveland, OH",
+    position: "Software Engineer Assistant",
+    location: "Cleveland, Ohio",
     startDate: "Aug 2023",
     endDate: "Dec 2024",
     type: "Part-time",
     achievements: [
-      "Researched distributed computing algorithms for IoT sensor networks",
-      "Developed machine learning models for predictive maintenance",
-      "Published research paper on edge computing optimization",
-      "Collaborated with industry partners on real-world applications"
+      "Developed an AI-powered information retrieval system using Azure AI and Semantic Kernel, leveraging TF-IDF, cosine similarity, and Azure Embeddings to perform vector-based search across documents stored in Azure Indexes",
+      "Built scalable microservices in Python to ingest, chunk, and embed documents, storing JSON metadata in Cosmos DB and enabling semantic search and retrieval through Azure Cognitive Search",
+      "Engineered a distributed data processing pipeline using PySpark and Azure Data Lake, transforming 100+ GB of unstructured text into ML-ready features for downstream NLP model training",
+      "Integrated LLMs like Llama and Gpt-4o into chatbot workflows, orchestrating prompt engineering and memory management using Semantic Kernel for dynamic, context-aware responses",
+      "Implemented RESTful APIs to expose AI insights to frontend applications, combining real-time data from Cosmos DB and SQL Server to support intelligent UI interactions"
     ],
-    technologies: ["Python", "TensorFlow", "Kubernetes", "MongoDB", "REST APIs"]
+    technologies: ["Azure AI", "Semantic Kernel", "TF-IDF", "Cosine Similarity", "Azure Embeddings", "Azure Indexes", "Python", "Cosmos DB", "Azure Cognitive Search", "PySpark", "Azure Data Lake", "Llama", "GPT-4o", "RESTful APIs", "SQL Server"]
   },
   {
     id: 4,
     company: "Amazon",
-    position: "Data Catalog Engineer",
+    position: "Software Engineer",
     location: "Chennai, India",
     startDate: "Jun 2021",
     endDate: "Dec 2022",
     type: "Full-time",
     achievements: [
-      "Designed and implemented data catalog systems for large-scale data management",
-      "Built automated data discovery and lineage tracking tools",
-      "Optimized data processing pipelines improving efficiency by 45%",
-      "Collaborated with data scientists and analysts to improve data accessibility",
-      "Implemented data governance policies and compliance frameworks"
+      "Engineered microservices for Amazon's Retail Business Services, enabling real-time tracking of customer and vendor session activities to support personalized experiences and operational insights",
+      "Enhanced catalog reliability and user experience for both customers and vendors by resolving data anomalies, implementing account concurrency checks, and surfacing contextually relevant recommendations",
+      "Designed and implemented a Multi-Region Live Data Catalog framework for Amazon Marketplace, supporting global data consistency and scalability using DynamoDB, SQS Queues, and AWS Lambda",
+      "Led the initiative to unify Amazon's distributed catalog architecture into a centralized system, improving data integrity, vendor onboarding, and customer-facing interactions across international marketplaces"
     ],
-    technologies: ["Python", "Apache Spark", "AWS Glue", "S3", "Lambda", "DynamoDB"]
+    technologies: ["Microservices", "DynamoDB", "SQS", "AWS Lambda", "Python", "AWS"]
   },
   {
     id: 5,
-    company: "Pyramid SoftSol",
+    company: "Pyramid Soft Solution",
     position: "Software Engineer",
     location: "Hyderabad, India",
-    startDate: "May 2020",
+    startDate: "May 2019",
     endDate: "May 2021",
     type: "Full-time",
     achievements: [
-      "Developed enterprise web applications using modern JavaScript frameworks",
-      "Implemented microservices architecture for scalable applications",
-      "Created automated testing suites achieving 95% code coverage",
-      "Led a team of 3 junior developers on multiple projects",
-      "Optimized database performance reducing query time by 50%"
+      "Deployed a collaborative filtering recommendation system using matrix factorization with Scikit-learn and TensorFlow, boosting user engagement by 25% and retention by 15% across a user base of 10,000+",
+      "Engineered fuzzy matching search functionality using ElasticSearch, implementing BM25 ranking scoring across 100K+ records to improve search success rate by 40%",
+      "Built automated machine learning data pipelines using Python and Pandas, processing 5+ GB of daily data for feature engineering and elevating model accuracy from 85% to 98% through rigorous data quality optimization",
+      "Containerized ML microservices with Docker and deployed on AWS EC2 using HAL",
+      "Developed real-time ML inference APIs using Flask serving predictions to Chart.js dashboards and enhancing reporting efficiency by 60%"
     ],
-    technologies: ["JavaScript", "Node.js", "React", "MongoDB", "Docker", "Kubernetes"]
+    technologies: ["Scikit-learn", "TensorFlow", "ElasticSearch", "BM25", "Python", "Pandas", "Docker", "AWS EC2", "HAL", "Flask", "Chart.js", "ML"]
   },
   {
     id: 6,
@@ -117,45 +122,39 @@ export const experience = [
 
 export const skills = {
   "Programming Languages": [
-    { name: "C", level: 95 },
-    { name: "C++", level: 90 },
-    { name: "Java", level: 85 },
-    { name: "Python", level: 80 },
-    { name: "SQL", level: 75 },
-    { name: "Bash", level: 70 }
+    { name: "C#", level: 90 },
+    { name: "Python", level: 90 },
+    { name: "SQL", level: 85 },
+    { name: "TypeScript", level: 85 },
+    { name: "JavaScript", level: 85 }
   ],
-  "Systems Programming": [
-    { name: "UNIX/Linux", level: 90 },
-    { name: "Multi-threading", level: 85 },
-    { name: "IPC", level: 80 },
-    { name: "Socket Programming", level: 75 }
+  "Big Data & Processing": [
+    { name: "PySpark", level: 85 },
+    { name: "Kafka", level: 80 }
+  ],
+  "Databases": [
+    { name: "SQL Server", level: 90 },
+    { name: "Cosmos DB", level: 85 }
+  ],
+  "Cloud & AI Platforms": [
+    { name: "Azure AI", level: 90 },
+    { name: "Vertex AI", level: 85 },
+    { name: "Azure", level: 90 },
+    { name: "Google Cloud Platform", level: 80 },
+    { name: "Amazon Web Services", level: 85 }
   ],
   "Web Technologies": [
     { name: "React", level: 85 },
     { name: "Node.js", level: 80 },
-    { name: "JavaScript", level: 85 },
-    { name: "HTML/CSS", level: 90 },
-    { name: "REST APIs", level: 85 }
+    { name: "SignalR", level: 80 }
   ],
-  "Cloud & DevOps": [
-    { name: "AWS", level: 80 },
-    { name: "Docker", level: 75 },
-    { name: "Kubernetes", level: 70 },
-    { name: "CI/CD", level: 75 },
-    { name: "Git", level: 90 }
+  "DevOps & Containers": [
+    { name: "Docker", level: 85 },
+    { name: "Kubernetes", level: 80 },
+    { name: "HAL", level: 75 }
   ],
-  "Databases": [
-    { name: "PostgreSQL", level: 80 },
-    { name: "MongoDB", level: 75 },
-    { name: "MySQL", level: 85 },
-    { name: "Redis", level: 70 }
-  ],
-  "Tools & Frameworks": [
-    { name: "Spring Boot", level: 80 },
-    { name: "TensorFlow", level: 70 },
-    { name: "Docker", level: 75 },
-    { name: "Jenkins", level: 70 },
-    { name: "JUnit", level: 85 }
+  "Tools & Platforms": [
+    { name: "JIRA", level: 85 }
   ]
 };
 

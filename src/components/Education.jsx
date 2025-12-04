@@ -51,7 +51,7 @@ const Education = () => {
               <h4 className="text-lg text-white/80 mb-3">
                 {edu.institution}
               </h4>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-white/60 mb-4">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
                 <div className="flex items-center gap-2">
                   <FaMapMarkerAlt size={12} />
                   <span>{edu.location}</span>
@@ -61,11 +61,6 @@ const Education = () => {
                   <span>{edu.startDate} - {edu.endDate}</span>
                 </div>
               </div>
-              {edu.gpa && (
-                <div className="text-sm text-white/70">
-                  GPA: {edu.gpa}
-                </div>
-              )}
             </SpotlightCard>
           </motion.div>
         ))}

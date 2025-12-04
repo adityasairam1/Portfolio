@@ -145,8 +145,6 @@ export const education = [
     degree: "Master's in Computer Science",
     institution: "Cleveland State University",
     location: "Cleveland, OH",
-    startDate: "Aug 2023",
-    endDate: "Dec 2024",
     courses: [
       "Advanced Database Systems",
       "Cloud Computing",
@@ -169,8 +167,6 @@ export const education = [
     degree: "Bachelor's in Computer Science",
     institution: "Jawaharlal Nehru Technological University Hyderabad",
     location: "Hyderabad, India",
-    startDate: "Aug 2019",
-    endDate: "May 2023",
     courses: [
       "Data Structures and Algorithms",
       "Network-Based Application Development",

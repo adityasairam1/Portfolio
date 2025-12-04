@@ -147,7 +147,6 @@ export const education = [
     location: "Cleveland, OH",
     startDate: "Aug 2023",
     endDate: "Dec 2024",
-    gpa: "3.8/4.0",
     courses: [
       "Advanced Database Systems",
       "Cloud Computing",
@@ -172,7 +171,6 @@ export const education = [
     location: "Hyderabad, India",
     startDate: "Aug 2019",
     endDate: "May 2023",
-    gpa: "3.6/4.0",
     courses: [
       "Data Structures and Algorithms",
       "Network-Based Application Development",

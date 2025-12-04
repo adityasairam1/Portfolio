@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import { education } from '../data/data';
 import SpotlightCard from './SpotlightCard';
 
@@ -57,7 +57,6 @@ const Education = () => {
                   <span>{edu.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <FaCalendarAlt size={12} />
                   <span>{edu.startDate} - {edu.endDate}</span>
                 </div>
               </div>

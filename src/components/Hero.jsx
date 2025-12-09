@@ -46,7 +46,7 @@ const Hero = () => {
             {personalInfo.title}
           </p>
           <p className="text-lg text-white/60 leading-relaxed max-w-xl">
-            {personalInfo.summary}
+            Ex-Amazon Software Engineer specializing in scalable backends and intelligent data systems.
           </p>
           <div className="flex gap-4 pt-4">
             <motion.button

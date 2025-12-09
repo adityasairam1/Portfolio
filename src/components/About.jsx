@@ -45,7 +45,7 @@ const About = () => {
             <h3 className="text-3xl font-semibold text-white mb-4">
               {personalInfo.name.split(' ')[0]}
             </h3>
-            <p className="text-white/70 leading-relaxed mb-6">
+            <p className="text-white/70 leading-relaxed mb-6 whitespace-pre-line">
               {personalInfo.summary}
             </p>
             <div className="space-y-2 text-sm text-white/60">

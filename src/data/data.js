@@ -63,7 +63,7 @@ export const experience = [
   },
   {
     id: 4,
-    company: "Pyramid Soft Solution",
+    company: "Pyramid Software Solutions Inc",
     position: "Software Engineer",
     location: "Hyderabad, India",
     startDate: "May 2019",

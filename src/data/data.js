@@ -32,7 +32,7 @@ export const experience = [
   {
     id: 2,
     company: "Cleveland State University",
-    position: "Research Engineer",
+    position: "Graduate Research Assistant",
     location: "Cleveland, OH",
     startDate: "Aug 2023",
     endDate: "Dec 2024",

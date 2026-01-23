@@ -1,4 +1,6 @@
+/* Optimized font loading with font-display swap */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,14 +10,59 @@
     scroll-behavior: smooth;
   }
   
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   
   * {
     box-sizing: border-box;
+  }
+  
+  /* Focus visible styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+  }
+  
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
   }
 }
 
@@ -40,7 +87,7 @@
   background-clip: text;
 }
 
-/* Button glow effect */
+/* Button glow effect - respects reduced motion */
 .button-glow {
   position: relative;
   overflow: hidden;
@@ -59,22 +106,41 @@
   transition: width 0.6s, height 0.6s;
 }
 
-.button-glow:active::before {
-  width: 300px;
-  height: 300px;
+@media (prefers-reduced-motion: no-preference) {
+  .button-glow:active::before {
+    width: 300px;
+    height: 300px;
+  }
 }
 
-/* Image zoom effect */
+/* Image zoom effect - respects reduced motion */
 .image-zoom {
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.image-zoom:hover {
-  transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+  .image-zoom:hover {
+    transform: scale(1.05);
+  }
 }
 
 @layer utilities {
   .bento-card {
     @apply rounded-2xl bg-neutral-900/50 backdrop-blur-md transition-all duration-300;
+  }
+  
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

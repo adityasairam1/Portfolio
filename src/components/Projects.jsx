@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '../data/data';
 import SpotlightCard from './SpotlightCard';
+import SectionHeading from './SectionHeading';
+import { fadeInUp, fadeIn } from '../utils/animations';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -11,42 +12,26 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-      },
-    }),
-  };
-
   return (
     <motion.section
       id="projects"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mb-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+      variants={fadeIn}
+      className="mb-section"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-5xl md:text-6xl font-bold mb-8 gradient-text tracking-tighter"
-      >
-        Projects
-      </motion.h2>
+      <SectionHeading>Projects</SectionHeading>
 
       {/* Category Filter */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
+        variants={fadeInUp}
         className="flex flex-wrap gap-2 mb-8"
+        role="tablist"
+        aria-label="Project categories"
       >
         {categories.map((category) => (
           <motion.button
@@ -54,9 +39,12 @@ const Projects = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedCategory(category)}
-            className={`button-glow px-4 py-2 rounded-lg text-sm font-medium transition-all relative overflow-hidden ${
+            role="tab"
+            aria-selected={selectedCategory === category}
+            aria-controls="projects-grid"
+            className={`button-glow px-4 py-2 rounded-lg text-sm font-medium transition-all relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 ${
               selectedCategory === category
-                ? 'bg-white text-[#0a0a0a]'
+                ? 'bg-white text-bg-primary'
                 : 'bg-neutral-900/50 backdrop-blur-md border border-white/10 text-white/70 hover:border-white/20'
             }`}
           >
@@ -66,68 +54,46 @@ const Projects = () => {
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div id="projects-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" role="list">
         {filteredProjects.map((project, index) => (
-          <motion.div
+          <motion.article
             key={project.id}
             custom={index}
-            variants={itemVariants}
+            variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-50px' }}
+            role="listitem"
           >
-            <SpotlightCard className="p-6 group cursor-pointer">
-              <div className="flex items-start justify-between mb-4">
+            <SpotlightCard className="p-6">
+              <div className="mb-4">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
                 </h3>
-                <div className="flex gap-2">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-white/5 rounded"
-                    >
-                      <FaGithub className="text-white/60" size={16} />
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-white/5 rounded"
-                    >
-                      <FaExternalLinkAlt className="text-white/60" size={16} />
-                    </a>
-                  )}
-                </div>
               </div>
 
               <p className="text-white/60 text-sm mb-4 line-clamp-2">
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2" role="list">
                 {project.technologies.slice(0, 3).map((tech) => (
                   <span
                     key={tech}
                     className="px-2 py-1 bg-white/5 rounded text-xs text-white/70"
+                    role="listitem"
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="px-2 py-1 bg-white/5 rounded text-xs text-white/50">
+                  <span className="px-2 py-1 bg-white/5 rounded text-xs text-white/50" aria-label={`${project.technologies.length - 3} more technologies`}>
                     +{project.technologies.length - 3}
                   </span>
                 )}
               </div>
             </SpotlightCard>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </motion.section>

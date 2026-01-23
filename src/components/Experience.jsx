@@ -2,50 +2,33 @@ import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 import { experience } from '../data/data';
 import SpotlightCard from './SpotlightCard';
+import SectionHeading from './SectionHeading';
+import { fadeInUp, fadeIn } from '../utils/animations';
 
 const Experience = () => {
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-      },
-    }),
-  };
-
   return (
     <motion.section
       id="experience"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mb-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+      variants={fadeIn}
+      className="mb-section"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-5xl md:text-6xl font-bold mb-8 gradient-text tracking-tighter"
-      >
-        Experience
-      </motion.h2>
+      <SectionHeading>Experience</SectionHeading>
 
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {experience.map((exp, index) => (
-          <motion.div
+          <motion.article
             key={exp.id}
             custom={index}
-            variants={itemVariants}
+            variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-50px' }}
           >
             <SpotlightCard className="p-6">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {exp.position}
@@ -55,25 +38,26 @@ const Experience = () => {
                   </h4>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-white/60 mb-4">
                     <div className="flex items-center gap-2">
-                      <FaMapMarkerAlt size={12} />
+                      <FaMapMarkerAlt size={12} aria-hidden="true" />
                       <span>{exp.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <FaCalendarAlt size={12} />
+                      <FaCalendarAlt size={12} aria-hidden="true" />
                       <span>{exp.startDate} - {exp.endDate}</span>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2" role="list">
                     {exp.technologies.slice(0, 5).map((tech) => (
                       <span
                         key={tech}
                         className="px-2 py-1 bg-white/5 rounded text-xs text-white/70"
+                        role="listitem"
                       >
                         {tech}
                       </span>
                     ))}
                     {exp.technologies.length > 5 && (
-                      <span className="px-2 py-1 bg-white/5 rounded text-xs text-white/50">
+                      <span className="px-2 py-1 bg-white/5 rounded text-xs text-white/50" aria-label={`${exp.technologies.length - 5} more technologies`}>
                         +{exp.technologies.length - 5}
                       </span>
                     )}
@@ -81,7 +65,7 @@ const Experience = () => {
                 </div>
               </div>
             </SpotlightCard>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </motion.section>

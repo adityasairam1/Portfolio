@@ -4,6 +4,8 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane
 import toast from 'react-hot-toast';
 import { personalInfo, socialLinks } from '../data/data';
 import SpotlightCard from './SpotlightCard';
+import SectionHeading from './SectionHeading';
+import { fadeInUp, fadeIn } from '../utils/animations';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,22 +26,11 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    // Note: This is a mock submission. In production, integrate with a service like Formspree, EmailJS, or your backend.
     await new Promise(resolve => setTimeout(resolve, 2000));
     toast.success('Message sent successfully!');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5,
-      },
-    }),
   };
 
   const contactInfo = [
@@ -66,31 +57,24 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="mb-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-100px' }}
+      variants={fadeIn}
+      className="mb-section"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-5xl md:text-6xl font-bold mb-8 gradient-text tracking-tighter"
-      >
-        Contact
-      </motion.h2>
+      <SectionHeading>Contact</SectionHeading>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         {/* Contact Info */}
         <motion.div
           custom={0}
-          variants={itemVariants}
+          variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-50px' }}
         >
-          <SpotlightCard className="p-8">
+          <SpotlightCard className="p-6 md:p-8">
             <h3 className="text-xl font-semibold text-white mb-6">
               Get in Touch
             </h3>
@@ -99,10 +83,11 @@ const Contact = () => {
                 <a
                   key={info.label}
                   href={info.href}
-                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors group"
+                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors group focus:outline-none focus:ring-2 focus:ring-white/20"
+                  aria-label={`${info.label}: ${info.value}`}
                 >
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                    <info.icon className="text-white/70" size={18} />
+                    <info.icon className="text-white/70" size={18} aria-hidden="true" />
                   </div>
                   <div>
                     <div className="text-xs text-white/50 mb-1">{info.label}</div>
@@ -118,10 +103,11 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors"
+                  className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/20"
+                  aria-label={`Visit ${social.name} profile`}
                 >
-                  {social.name === 'LinkedIn' && <FaLinkedin className="text-white/70" size={18} />}
-                  {social.name === 'GitHub' && <FaGithub className="text-white/70" size={18} />}
+                  {social.name === 'LinkedIn' && <FaLinkedin className="text-white/70" size={18} aria-hidden="true" />}
+                  {social.name === 'GitHub' && <FaGithub className="text-white/70" size={18} aria-hidden="true" />}
                 </a>
               ))}
             </div>
@@ -131,17 +117,17 @@ const Contact = () => {
         {/* Contact Form */}
         <motion.div
           custom={1}
-          variants={itemVariants}
+          variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-50px' }}
         >
-          <SpotlightCard className="p-8">
+          <SpotlightCard className="p-6 md:p-8">
             <h3 className="text-xl font-semibold text-white mb-6">
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="name"
@@ -149,7 +135,8 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Name"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-colors"
+                  aria-label="Your name"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 focus:ring-2 focus:ring-white/20 transition-colors"
                 />
                 <input
                   type="email"
@@ -158,7 +145,8 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Email"
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-colors"
+                  aria-label="Your email"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 focus:ring-2 focus:ring-white/20 transition-colors"
                 />
               </div>
               <input
@@ -168,7 +156,8 @@ const Contact = () => {
                 onChange={handleInputChange}
                 required
                 placeholder="Subject"
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-colors"
+                aria-label="Message subject"
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 focus:ring-2 focus:ring-white/20 transition-colors"
               />
               <textarea
                 name="message"
@@ -177,23 +166,25 @@ const Contact = () => {
                 required
                 rows={5}
                 placeholder="Message"
-                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 transition-colors resize-none"
+                aria-label="Your message"
+                className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/20 focus:ring-2 focus:ring-white/20 transition-colors resize-none"
               />
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
-                className="button-glow w-full py-3 px-6 rounded-lg bg-white text-[#0a0a0a] font-semibold hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+                className="button-glow w-full py-3 px-6 rounded-lg bg-white text-bg-primary font-semibold hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2"
+                aria-label={isSubmitting ? 'Sending message' : 'Send message'}
               >
                 {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-[#0a0a0a] border-t-transparent rounded-full animate-spin"></div>
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <div className="w-5 h-5 border-2 border-bg-primary border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
                     <span>Sending...</span>
-                  </>
+                  </span>
                 ) : (
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    <FaPaperPlane />
+                    <FaPaperPlane aria-hidden="true" />
                     <span>Send Message</span>
                   </span>
                 )}

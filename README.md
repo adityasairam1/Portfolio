@@ -9,9 +9,9 @@ I'm a Software Engineer with expertise in Python, SQL, and C# who designs fault-
 ## Professional Experience
 
 - **Software Engineer** at Robotics Technologies LLC (Troy, MI) - March 2025 to Present
-- **Research Engineer** at Cleveland State University (Cleveland, OH) - August 2023 to December 2024
+- **Graduate Research Assistant** at Cleveland State University (Cleveland, OH) - August 2023 to December 2024
 - **Software Engineer** at Amazon (Chennai, India) - June 2021 to December 2022
-- **Software Engineer** at Pyramid Soft Solution (Hyderabad, India) - May 2019 to May 2021
+- **Software Engineer** at Pyramid Software Solutions Inc (Hyderabad, India) - May 2019 to May 2021
 
 ## Technical Expertise
 
@@ -23,8 +23,7 @@ I'm a Software Engineer with expertise in Python, SQL, and C# who designs fault-
 
 ## Education
 
-- **Master of Science in Computer Science** - Cleveland State University, Ohio, USA
-- **Bachelor of Technology in Computer Science** - JNTUH, India
+- **Master of Science in Computer Science** - Cleveland State University, Cleveland, OH
 
 ## Certifications
 
@@ -43,4 +42,5 @@ I'm a Software Engineer with expertise in Python, SQL, and C# who designs fault-
 ---
 
 *This portfolio showcases my professional journey, technical skills, and achievements in software engineering and cloud computing.*
+
 Made with ❤️ and lots of ☕ by Aditya Sairam
